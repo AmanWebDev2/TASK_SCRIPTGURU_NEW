@@ -21,14 +21,14 @@ const Header = () => {
             <img src={breadcrumb} />
           </span>
           <picture>
-            <source media="(min-width:767px)" srcset={logoSmall} />
-            <source media="(max-width:766px)" srcset={logoMedium} />
+            <source media="(min-width:767px)" srcSet={logoSmall} />
+            <source media="(max-width:766px)" srcSet={logoMedium} />
             <img src={logo} alt="Flowers" />
           </picture>
           <div className="hidden search md:flex md:items-center md:w-full">
-            <div class="relative rounded-md shadow-sm md:w-full">
-              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <span class="text-gray-500 sm:text-sm">
+            <div className="relative rounded-md shadow-sm md:w-full">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                <span className="text-gray-500 sm:text-sm">
                   <img src={search} />
                 </span>
               </div>
@@ -36,7 +36,7 @@ const Header = () => {
                 type="text"
                 name="search"
                 id="search"
-                class="block w-full rounded-md border-0 py-1.5 pl-12 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 py-1.5 pl-12 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
                 placeholder="Search product"
               />
             </div>

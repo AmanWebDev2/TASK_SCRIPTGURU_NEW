@@ -4,9 +4,9 @@ import { data } from "../products/slider-product";
 const Slider = () => {
   return (
     <div className="flex space-x-6 overflow-x-scroll m-7">
-      {data.map((item) => {
+      {data.map((item,i) => {
         return (
-            <div className="card card-compact min-w-52 bg-base-100 shadow-xl">
+            <div key={item.id * i} className="card card-compact min-w-52 bg-base-100 shadow-xl">
             <figure><img src={item.img} alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">{item.name}</h2>
