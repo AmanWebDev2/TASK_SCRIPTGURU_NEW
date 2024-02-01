@@ -46,13 +46,29 @@ const Header = () => {
           <div className="md:min-w-16 p-2 md:hidden">
             <img src={down} />
           </div>
-          <div className="md:min-w-16 p-2 ">
-            <button className="flex items-center p-2 md:gap-2 rounded-md md:hover:bg-blue-500 md:hover:text-white ">
+
+          <div className="md:min-w-16 p-2 dropdown dropdown-bottom dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="flex items-center p-2 md:gap-2 rounded-md md:hover:bg-blue-500 md:hover:text-white"
+            >
               <span>
                 <img className="hover:text-white" src={profile} />
               </span>
               Login
-            </button>
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a>Item 1</a>
+              </li>
+              <li>
+                <a>Item 2</a>
+              </li>
+            </ul>
           </div>
 
           <div className="cursor-pointer md:min-w-16 p-2 ">
@@ -69,16 +85,29 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="cursor-pointer md:min-w-16 p-2 ">
-            <div className="md:flex md:items-center md:gap-x-2">
-              <img src={verticalDot} />
-            </div>
-          </div>    
+        
 
+          <div className=" dropdown dropdown-bottom dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-sm m-1">
+            <img src={verticalDot} />
+              
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a>Item 1</a>
+              </li>
+              <li>
+                <a>Item 2</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <SubHeader/>
+      <SubHeader />
     </header>
   );
 };
