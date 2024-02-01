@@ -10,6 +10,7 @@ import cart from "../assets/svg/cart.svg";
 import search from "../assets/svg/search.svg";
 import store from "../assets/svg/store.svg";
 import verticalDot from "../assets/svg/vertical-dot.svg";
+import SubHeader from "./SubHeader";
 
 const Header = () => {
   return (
@@ -76,6 +77,8 @@ const Header = () => {
 
         </div>
       </div>
+
+      <SubHeader/>
     </header>
   );
 };
