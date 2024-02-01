@@ -14,7 +14,7 @@ const SubHeader = () => {
     }
   };
   return (
-    <div className="flex space-x-4 justify-center">
+    <div className="flex space-x-4 justify-center overflow-x-scroll">
       {data.map((item) => {
         return (
           <div className="cursor-pointer flex flex-col justify-around relative max-w-32 px-4 bg-base-100 border-2 "
