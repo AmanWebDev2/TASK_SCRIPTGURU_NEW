@@ -10,9 +10,7 @@ function App() {
     <main>
       <Header/>
       <Carousel/>
-      <Slider />
-      <Carousel/>
-      <Slider />
+      <Slider/>
       <Footer/>
     </main>
   )
