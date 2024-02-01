@@ -14,10 +14,10 @@ const SubHeader = () => {
     }
   };
   return (
-    <div className="flex space-x-4 justify-center overflow-x-scroll">
+    <div className="flex space-x-4 lg:justify-center  overflow-x-scroll">
       {data.map((item) => {
         return (
-          <div className="cursor-pointer flex flex-col justify-around relative max-w-32 px-4 bg-base-100 border-2 "
+          <div className="cursor-pointer flex flex-col justify-around relative min-w-32 px-4 bg-base-100 border-2 "
           onMouseEnter={(e) => handleMouseEnter(e, item)}
           onMouseLeave={() => {
             setSelectedId(-1)
@@ -46,7 +46,7 @@ const SubList = ({ item }) => {
   const [subList, setSubList] = useState([]);
 
   return (
-    <div className="z-10 flex items-center" style={{
+    <div className="hidden lg:flex z-10 items-center" style={{
       position:'absolute',
       top:'100%'
     }}>
