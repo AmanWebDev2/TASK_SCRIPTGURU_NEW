@@ -113,7 +113,7 @@ const Products = () => {
         <label htmlFor="min" className="">
             Min Price
             <input
-              type="text"
+              type="number"
               id="min"
               ref={minPriceRef}
               placeholder="min price"
@@ -123,7 +123,7 @@ const Products = () => {
           <label htmlFor="max">
             Max Price
             <input
-              type="text"
+              type="number"
               placeholder="max price"
               id="max"
               ref={maxPriceRef}
