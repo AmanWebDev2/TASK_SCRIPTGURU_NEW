@@ -87,8 +87,8 @@ const Products = () => {
   }
 
   return (
-    <div className="flex flex-col items-center md:flex-row md:items-start   justify-center overflow-auto">
-      <div className="filter px-6 md:w-1/4 border-r-blue-600">
+    <div className="flex flex-col items-center md:flex-row md:items-start justify-around overflow-auto">
+      <div className="filter px-6 md:w-1/5 border-r-blue-600">
         <div className="categories my-10">
           {categoires.map((category) => {
             return (
@@ -139,14 +139,14 @@ const Products = () => {
           <div className="flex items-center flex-wrap gap-3 justify-around">
             {products.map((product) => {
               return (
-                <div key={product._id} className="card w-96  bg-base-100 shadow-xl">
+                <div key={product._id} className="card w-72  bg-base-100 shadow-xl">
                   <figure className="size-2/5	m-auto">
                     <img src={product.image} />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{product.title}
                     </h2>
-                    <p>{product.description}</p>
+                    <p className="text-sm">{product.description}</p>
                     <div className="card-actions justify-end">
                       <button className="btn btn-primary">Buy Now At ${product.price}</button>
                     </div>
