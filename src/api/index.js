@@ -62,6 +62,7 @@ const updateUser=async(data)=>{
         const api = `http://localhost:5050/api/v1/user/${id}`
         const resp = await axios.put(api,data,config);
         if(resp.data && resp.data.data){
+            toast.success("Successfully Updated !");
             return resp.data.data;
         }
 
