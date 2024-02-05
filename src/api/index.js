@@ -12,6 +12,7 @@ const registerApi=async(data)=>{
             console.error(resp.data)
         }
     }catch(err){
+        toast.error("Something went wrong !");
         console.log(err);
     }
 }
@@ -30,6 +31,7 @@ const loginApi=async(data)=>{
             return resp.data
         }
     } catch (error) {
+        toast.error("Something went wrong !");
         return null;
     }
 }
@@ -67,6 +69,7 @@ const updateUser=async(data)=>{
         }
 
     } catch (error) {
+        toast.error("Something went wrong !");
         console.log(error)
     }
 }
