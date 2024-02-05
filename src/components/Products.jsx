@@ -136,7 +136,7 @@ const Products = () => {
       </div>
       <div className="products md:w-1/2">
         {products?.length > 0 ? (
-          <div className="flex items-center flex-wrap gap-3 justify-around">
+          <div className="flex items-center flex-wrap gap-3 justify-around max-h-96 overflow-y-scroll">
             {products.map((product) => {
               return (
                 <div key={product._id} className="card w-72  bg-base-100 shadow-xl">
