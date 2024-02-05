@@ -3,7 +3,7 @@ import { data } from "../products/slider-product";
 
 const Slider = () => {
   return (
-    <div className=" snap-x flex space-x-6 overflow-x-scroll m-7">
+    <div className="slider flex space-x-6 overflow-x-scroll m-7">
       {data.map((item,i) => {
         return (
             <div key={item.id * i} className="card card-compact min-w-52 bg-base-100 shadow-xl">
