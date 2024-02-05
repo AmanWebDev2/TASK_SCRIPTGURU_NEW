@@ -18,9 +18,12 @@ const Products = () => {
     (async () => {
       const data = await productsApi();
       const categoryResp = await categoryApi();
-      setProducts(data);
-      setCategories(categoryResp);
-      console.log(categoryResp);
+      if(data) {
+        setProducts(data);
+      }
+      if(categoryResp) {
+        setCategories(categoryResp);
+      }
     })();
   }, []);
 
