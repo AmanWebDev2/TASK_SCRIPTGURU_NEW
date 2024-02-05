@@ -1,5 +1,6 @@
 import axios from "axios"
 import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 
 const registerApi=async(data)=>{
     try{
@@ -25,11 +26,11 @@ const loginApi=async(data)=>{
                 Cookies.set('token',token, { expires: 1, secure: true });
                 Cookies.set('userId',userId, { expires: 1, secure: true });
             }
+            toast.success("Successfully Logged In !");
             return resp.data
         }
     } catch (error) {
         return null;
-        console.log(error)
     }
 }
 

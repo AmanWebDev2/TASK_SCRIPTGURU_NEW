@@ -17,8 +17,7 @@ import Login from "./Login";
 import MyProfile from "./MyProfile";
 import Cookies from "js-cookie";
 import { getUserApi } from "../api";
-import { UserContext } from "../App";
-
+import {toast} from "react-toastify"
 const Header = ({ userData, setUserData }) => {
   const registerRef = useRef(null);
   const loginRef = useRef(null);
@@ -38,6 +37,7 @@ const Header = ({ userData, setUserData }) => {
     Cookies.remove('token');
     Cookies.remove('userId');
     setUserData(null);
+    toast.success("Successfully Logged Out !");
   }
 
   return (
