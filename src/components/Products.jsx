@@ -59,7 +59,7 @@ const Products = () => {
       setSelectedCategory((prev)=>[...prev,categoryId])
     }else{
     const updatedCategory = selectedCategory.filter((id)=>id !== categoryId);
-    setCategories([...updatedCategory])
+    setSelectedCategory([...updatedCategory])
     }
   }
 
@@ -141,7 +141,8 @@ const Products = () => {
                     <img src={product.image} />
                   </figure>
                   <div className="card-body">
-                    <h2 className="card-title">{product.title}</h2>
+                    <h2 className="card-title">{product.title}
+                    </h2>
                     <p>{product.description}</p>
                     <div className="card-actions justify-end">
                       <button className="btn btn-primary">Buy Now At ${product.price}</button>
