@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useRef, useState } from "react";
 
 import breadcrumb from "../assets/svg/breadcrumb.svg";
 import logo from "../assets/svg/logo.svg";
@@ -11,10 +11,40 @@ import search from "../assets/svg/search.svg";
 import store from "../assets/svg/store.svg";
 import verticalDot from "../assets/svg/vertical-dot.svg";
 import SubHeader from "./SubHeader";
+import Register from "./Register";
+import Toast from "./Toast";
+import Login from "./Login";
+import MyProfile from "./MyProfile";
+import Cookies from "js-cookie";
+import { getUserApi } from "../api";
+import { UserContext } from "../App";
 
-const Header = () => {
+const Header = ({ userData, setUserData }) => {
+  const registerRef = useRef(null);
+  const loginRef = useRef(null);
+  const profileRef = useRef(null);
+  const [user,setUser] = useState(null);
+
+
+  const handleMyProfile=async()=>{
+    const userId = Cookies.get('userId')
+    if(!userId) return;
+    const data = await getUserApi();
+    setUser(data);
+    profileRef.current.showModal();
+  }
+
+  const handleLogout=()=>{
+    Cookies.remove('token');
+    Cookies.remove('userId');
+    setUserData(null);
+  }
+
   return (
     <header className="p-4 shadow-lg shadow-gray-30">
+      <Register ref={registerRef} />
+      <Login ref={loginRef} setUserData={setUserData}/>
+      <MyProfile ref={profileRef}  userData={user}/>
       <div className="wrapper flex justify-between max-w-lg m-auto md:m-0 md:min-w-full md:justify-between">
         <div className="flex items-center gap-x-2 md:gap-x-5 md:flex-grow">
           <span className="md:hidden">
@@ -60,13 +90,14 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-60"
             >
-              <li>
-                <a>Item 1</a>
+              <li onClick={()=>registerRef.current?.showModal()}>
+                <a>New Customer ? <span className="bg-blue-600 p-3 rounded-md text-white">Signup</span></a>
               </li>
               <li>
-                <a>Item 2</a>
+                <a className={`${userData ?'block' : 'hidden'}`} onClick={()=>handleMyProfile()} >My Profile</a>
+                <a className={`${userData ?'hidden' : 'block'}`} onClick={()=>loginRef.current.showModal()} >Login</a>
               </li>
             </ul>
           </div>
@@ -97,7 +128,7 @@ const Header = () => {
               className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Item 1</a>
+                <a className={`${userData ? 'block' : 'hidden'}`} onClick={handleLogout}>Log out</a>
               </li>
               <li>
                 <a>Item 2</a>
