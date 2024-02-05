@@ -6,7 +6,7 @@ import img3 from "../assets/offers/three.jpg"
 const Offers = () => {
   return (
     <>
-    <div className="flex flex-col items-center sm:grid grid-rows-2 lg:grid-rows-3 grid-flow-col gap-1">
+    <div className="flex flex-col items-center sm:grid grid-rows-2 lg:grid-rows-2 mx-5 my-10 grid-flow-col gap-1">
     
     <div>
         <img src={img1} />
